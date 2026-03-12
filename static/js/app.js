@@ -99,8 +99,8 @@ function revokeBlob()    { if (blobUrl) { URL.revokeObjectURL(blobUrl); blobUrl 
 (async () => {
   try {
     const data = await fetch("/api/voices").then(r => r.json());
-    if (data.count) voiceCount.textContent = data.count + " voices · macOS say";
-  } catch { voiceCount.textContent = "macOS say · offline"; }
+    if (data.count) voiceCount.textContent = data.count + " voices";
+  } catch { voiceCount.textContent = ""; }
   updateUI();
 })();
 
